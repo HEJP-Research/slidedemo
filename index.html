@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <!-- 
+      Use this to change the text that appears on the tab in the browser when you're on a page
+    -->
+    <title>HEJP Slides</title>
+
+    <!-- 
+      Link necessary scripts (index.js, jquery) and stylesheet (index.css)
+    -->
+
+    <script type="text/javascript" src="index.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    ></script>
+
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body onload="loopSamples()">
+    Sample Slide Images: Hover over a slide to see a sample!
+    <p></p>
+    <button id="previewBtnID" onclick="loopSamples()">Keep Previewing</button>
+    <p></p>
+    <!--
+      This holds the image of a sample from each of the slide websites.
+      This styling keeps all 6 images in the same height/width division. 
+      This way we don't get the page moving the links/image around for different images. 
+    -->
+    <img
+      style="height: 70%; width: 70%; object-fit: contain"
+      src="sample_slide_images/sample_slide1.png"
+      alt="Sample Image for Slide 1"
+      id="sampleImageID"
+    />
+
+    <p></p>
+
+    <!--
+      These are all the links to the slides. 
+      For each link, when you hover over it, run the JS function that stops the image cycling
+      and displays the picture for the image as long as you hover over the link (+ 3 seconds)
+      When you hover out of it, run the JS function that begins the cycling after displaying the
+      selected image for 3 more seconds.
+
+      Each link passes in the numeric part of the ID to the JS function.
+    -->
+
+    <a href="slide1" id="linkslide1ID" onmouseover="displayHoveredImage(1)"
+      >Slide 1</a
+    >
+    <a href="slide2" id="linkslide2ID" onmouseover="displayHoveredImage(2)"
+      >Slide 2</a
+    >
+    <a href="slide3" id="linkslide3ID" onmouseover="displayHoveredImage(3)"
+      >Slide 3</a
+    >
+    <a href="slide4" id="linkslide4ID" onmouseover="displayHoveredImage(4)"
+      >Slide 4</a
+    >
+    <a href="slide5" id="linkslide5ID" onmouseover="displayHoveredImage(5)"
+      >Slide 5</a
+    >
+    <a href="slide6" id="linkslide6ID" onmouseover="displayHoveredImage(6)"
+      >Slide 6</a
+    >
+    <a href="slide7" id="linkslide7ID" onmouseover="displayHoveredImage(7)"
+      >Slide 7</a
+    >
+  </body>
+</html>

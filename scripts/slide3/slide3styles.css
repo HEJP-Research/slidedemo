@@ -1,0 +1,49 @@
+.line_Southeast { 
+    stroke: #1A3A71;
+}
+.line_Southwest {
+    stroke: #993E01;
+}
+.line_RockyMountains {
+    stroke: #63A536;
+}
+.line_GreatLakes {
+    stroke: #ED7C30;
+}
+.line_NewEngland {
+    stroke: #FFC000;
+}
+.line_Plains {
+    stroke: #65A1D8;
+}
+.line_Mideast {
+    stroke: #A5A5A5;
+}
+.line_FarWest {
+    stroke: #3A6BC1;
+}
+
+.legend_Southeast { 
+    fill: #1A3A71;
+}
+.legend_Southwest {
+    fill: #993E01;
+}
+.legend_RockyMountains {
+    fill: #63A536;
+}
+.legend_GreatLakes {
+    fill: #ED7C30;
+}
+.legend_NewEngland {
+    fill: #FFC000;
+}
+.legend_Plains {
+    fill: #65A1D8;
+}
+.legend_Mideast {
+    fill: #A5A5A5;
+}
+.legend_FarWest {
+    fill: #3A6BC1;
+}

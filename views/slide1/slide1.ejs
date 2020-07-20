@@ -1,0 +1,97 @@
+<!-- 
+  This is the template file that lays out the website's elements for slide 1. These are: 
+    * slider for year 1 (on update graph will be updated)
+    * slider for year 2 (on update graph will be updated)
+    * button to generate the graph 
+    * button for animation that automatically goes over all possible year1, year2 choices 
+    * bar graph that holds beazone data (mimics graph on slide 1 of post-doc slides)
+
+  Instead of 2 sliders: https://css-tricks.com/multi-thumb-sliders-particular-two-thumb-case/ 
+-->
+
+<html>
+  <head>
+
+    <!-- 
+      Use this to change the text that appears on the tab in the browser when you're on a page
+    -->
+    <title>Slide 1</title>
+
+    <!-- 
+      Link JQuery, D3 and necessary script + CSS for this template.
+    -->
+
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    ></script>
+
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+
+    <script src="scripts/slide1/slide1.js"></script>
+
+    <link rel="stylesheet" href="scripts/slide1/slide1styles.css" />
+  </head>
+
+  <body onload = "updateYear()">
+
+    <!-- 
+      Range slider that allows you to select year 1 in comparison
+    -->
+    <p>
+      Select Year 1:
+      <input
+        type="range"
+        name="year1Slider"
+        min="2007"
+        max="2017"
+        value="2007"
+        class="slider"
+        id="year1SliderID"
+        onchange="updateYear()"
+      />
+    </p>
+
+    <!-- 
+      Range slider that allows you to select year 2 in comparison.
+    -->
+    <p>
+      Select Year 2:
+      <input
+        type="range"
+        name="year2Slider"
+        min="2007"
+        max="2017"
+        value="2017"
+        class="slider"
+        id="year2SliderID"
+        onchange="updateYear()"
+      />
+    </p>
+
+    <p>
+      <!-- 
+        Button that allows you to generate the graph. 
+      -->
+      <button onclick="updateYear()" id = "graphGenID">Generate Graph</button>
+
+      <!--
+        Animation button that goes over all possible year 1, year 2 combinations
+      -->
+      <button
+        id="animate"
+        value="0"
+        onclick="this.value = (this.value == '0' ? '1' : '0'); animateYears();"
+        onmouseover="updateColor(this, this.value)"
+        onmouseout="revertColor(this)"
+      >
+        Animate
+      </button>
+    </p>
+
+    <!-- 
+      Beazone data graph (i.e. the replication from slide )
+    -->
+    <div id="beazoneGraph"></div>
+  </body>
+</html>

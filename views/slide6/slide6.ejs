@@ -1,0 +1,94 @@
+<!-- 
+  This is the template for the slide 6 website. This provides a webpage for the user to input
+  a year via slider and a subject from biology, chemistry, economics via a drop down menu. 
+  Then 2 graphs are displayed for the year, subject selection based off of the graphs 
+  displayed in the 6th slide from the post doc slides.
+-->
+
+<html>
+  <head>
+    <!-- 
+      Use this to change the text that appears on the tab in the browser when you're on a page
+    -->
+    <title>Slide 6</title>
+
+    <!-- 
+      Link JQuery, D3 and necessary script + CSS for this template.
+    -->
+
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    ></script>
+
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+
+    <script src="scripts/slide6/slide6.js"></script>
+
+    <link rel="stylesheet" href="scripts/slide6/slide6styles.css" />
+  </head>
+
+  <body onload="updateYear()">
+    <!-- 
+      Slider that takes in a year as an input from the range 2007-2017. The JavaScript function
+      updateYear() will re-run a SQL query and generate new bar graphs in D3 based on the 
+      year selection.
+    -->
+
+    <input
+      type="range"
+      name="marjanslider"
+      min="2007"
+      max="2017"
+      value="2017"
+      class="slider"
+      id="yearSlider"
+      onchange="updateYear()"
+    />
+
+    <!-- 
+      Drop down selection menu that allows the user to choose a subject from Economics,
+      Chemistry, and Biology. Upon subject selection, the JavaScript function updateYear()
+      will re-run a SQL query with this new parameter and generate new bar graphs in D3
+      based on the subject selection.
+    -->
+
+    <select id="subj_select_id" name="subj_select" onclick="updateYear()">
+      <option value="econ"> Economics </option>
+      <option value="chem"> Chemistry </option>
+      <option value="biomed"> Biology </option>
+    </select>
+
+    <!--
+
+    -->
+
+    <button id="go" onclick="updateYear()">Go</button>
+
+    <!-- 
+      Runs animation that moves slider over the chooseable years (2007, 2010-2017) and 
+      updates the bar graphs at each step. 
+    -->
+
+    <button
+      id="animate"
+      value="0"
+      onclick="this.value = (this.value == '0' ? '1' : '0'); animateYears();"
+      onmouseover="updateColor(this, this.value)"
+      onmouseout="revertColor(this)"
+    >
+      Animate
+    </button>
+    <p></p>
+
+    <!-- 
+      The 2 bar graphs from the 6th slide in post-doc packet. 
+        barGraph1 = Top 10 <subject> skills in <year>
+        barGraph2 = Change in skill representation from 2010 to 2017 of the 10 skills 
+        displayed in barGraph1
+    -->
+
+    <div id="barGraph1" style="background-color:rgb(184, 255, 244)"></div>
+    <div id="barGraph2" style="background-color:rgb(255, 193, 252)"></div>
+  </body>
+</html>

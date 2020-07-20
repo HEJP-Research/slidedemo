@@ -1,0 +1,70 @@
+/* Style sheet for slide 2 */
+
+.bar {
+    /*fill: #B8BBFF;*/
+}
+
+.bar:hover {
+  /* fill: rgb(36, 0, 243);*/
+}
+  
+.title {
+  font: bold 24px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.ytext {
+    font: bold 24px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+  
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+  
+
+button {
+  background-color: white;
+  color: black;
+  border: 2px solid #000000; /* Black */
+}
+
+button {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #38d11a; /* green */
+  color: white;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider {
+  margin-top: 20px;
+  -webkit-appearance: none;
+  width: 200px;
+  height: 4px; 
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border-style: groove;
+}

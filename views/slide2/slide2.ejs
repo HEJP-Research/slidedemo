@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <!-- 
+      Use this to change the text that appears on the tab in the browser when you're on a page
+    -->
+    <title>Slide 2</title>
+
+    <!-- 
+      Link JQuery, D3 and necessary script + CSS for this template.
+    -->
+
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    ></script>
+
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+
+    <script src="scripts/slide2/slide2.js"></script>
+
+    <link rel="stylesheet" href="scripts/slide2/slide2styles.css" />
+  </head>
+  <body onload=updateYear()>
+    
+
+    <input
+      type="range"
+      name="startYearSlider"
+      min="2007"
+      max="2017"
+      value="2007"
+      class="slider"
+      id="startYearSliderID"
+      onchange="updateYear()"
+    />
+
+    <input
+      type="range"
+      name="endYearSlider"
+      min="2007"
+      max="2017"
+      value="2017"
+      class="slider"
+      id="endYearSliderID"
+      onchange="updateYear()"
+    />
+
+    <button onclick="updateYear()">Go</button>
+
+    <svg id="svg"></svg>
+  </body>
+</html>

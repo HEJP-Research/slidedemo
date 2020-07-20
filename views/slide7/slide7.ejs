@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <!-- Use this to change the text that appears on the tab in the browser when you're on a page -->
+    <title>Slide 7</title>
+
+    <!-- Link JQuery, D3 and necessary script + CSS for this template. -->
+
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    ></script>
+
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+
+    <script src="scripts/slide7/slide7.js"></script>
+
+    <link rel="stylesheet" href="scripts/slide7/slide7styles.css" />
+  </head>
+
+  <body onload="updateData()">
+    <input
+      type="range"
+      name="marjanslider"
+      min="2007"
+      max="2017"
+      value="2017"
+      class="slider"
+      id="yearSlider"
+      onchange="updateData()"
+    />
+
+    <select
+      id="division_select_id"
+      name="division_select"
+      onchange="updateData()"
+    >
+      <option value="soc_sci">Social Sciences</option>
+      <option value="sci">Sciences</option>
+      <option value="hum">Humanities</option>
+      <option value="other">Other</option>
+    </select>
+
+    <select
+      id="position_select_id"
+      name="position_select"
+      onchange="updateData()"
+    >
+      <option value="isr1">Research 1</option>
+      <option value="fouryear">Four Year</option>
+    </select>
+
+    <button id="go" onclick="updateData()">Go</button>
+
+    <!-- 
+      Runs animation that moves slider over the chooseable years (2007, 2010-2017) and 
+      updates the bar graph at each step. 
+    -->
+
+    <button
+      id="animate"
+      value="0"
+      onclick="this.value = (this.value == '0' ? '1' : '0'); animateYears();"
+      onmouseover="updateColor(this, this.value)"
+      onmouseout="revertColor(this)"
+    >
+      Animate
+    </button>
+    <p></p>
+
+    <!-- The bar graphs from Sarah's faculty job opening slides. -->
+    <div id="barGraph"></div>
+  </body>
+</html>
